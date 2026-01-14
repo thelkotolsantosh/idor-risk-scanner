@@ -17,3 +17,14 @@ analysis of object ID access patterns.
 
 ## Disclaimer
 All data is synthetic. This project is for educational and defensive purposes only.
+
+idor-risk-scanner/
+├── data/
+│   └── api_access_logs.csv
+├── src/
+│   ├── generate_logs.py
+│   ├── analyze_idor.py
+│   └── risk_scoring.py
+├── requirements.txt
+├── README.md
+└── LICENSE
