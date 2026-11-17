@@ -1,5 +1,6 @@
 import pandas as pd
 import random
+from pathlib import Path
 from faker import Faker
 
 fake = Faker()
@@ -17,4 +18,6 @@ for _ in range(1500):
         "status": random.choice([200, 200, 200, 403]),
     })
 
-pd.DataFrame(rows).to_csv("data/api_access_logs.csv", index=False)
+output = Path(__file__).resolve().parents[1] / "data/api_access_logs.csv"
+output.parent.mkdir(parents=True, exist_ok=True)
+pd.DataFrame(rows).to_csv(output, index=False)
